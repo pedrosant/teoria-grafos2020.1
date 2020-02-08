@@ -1,21 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package grafos;
+
+import java.util.Scanner;
 
 /**
  *
  * @author Roberto Borges
  */
-public class Grafos {
-
-    /**
-     * @param args the command line arguments
-     */
+    public class Grafos {
+   
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Digite o número de vertices de seu grafo: ");
+        int n = scan.nextInt();
+        int matrizAdj[][] = new int [n][n];
+        
+        for (int i = 0; i < matrizAdj.length; i++) {
+            for (int j = 0; j < matrizAdj.length; j++) {
+                System.out.print(matrizAdj[i][j]+ " | ");
+            }
+            System.out.println("");
+        }
+        
+       
     }
     
 }
