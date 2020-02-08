@@ -27,7 +27,7 @@ import java.util.Scanner;
             if (escolha.equals("s")) {
                 System.out.println("Digite o primeiro vertice adjacente");
             int v1 = scan.nextInt();
-                System.out.println("Digite o primeiro vertice adjacente");
+                System.out.println("Digite o segundo vertice adjacente");
             int v2 = scan.nextInt();
                 matrizAdj[v1][v2] = 1;
                 matrizAdj[v2][v1] = 1;
