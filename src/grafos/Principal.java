@@ -8,7 +8,6 @@ import java.util.Scanner;
     public class Principal {
    
     public static void main(String[] args) {
-        Adjacencia adj;
         Scanner scan = new Scanner(System.in);
         System.out.println("Digite o número de vertices de seu grafo: ");
         int n = scan.nextInt();
