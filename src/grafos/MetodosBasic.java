@@ -9,7 +9,7 @@ package grafos;
  *
  * @author Roberto Borges
  */
-public class Adjacencia {
+public class MetodosBasic {
      boolean encontrarAdj(int local){
         boolean resultado;
         if (local == 1) {
