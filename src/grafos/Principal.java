@@ -1,6 +1,7 @@
 package grafos;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 /**
  *
@@ -13,7 +14,8 @@ import java.util.Scanner;
         System.out.println("Digite o número de vertices de seu grafo: ");
         int n = scan.nextInt();
         int matrizAdj[][] = new int [n][n];
-        MetodosBasic metodosBasic;
+  
+        
         for (int i = 0; i < matrizAdj.length; i++) {
             for (int j = 0; j < matrizAdj.length; j++) {
                 System.out.print(matrizAdj[i][j]+ " | ");
@@ -42,10 +44,16 @@ import java.util.Scanner;
             }
             System.out.println("");
         }
+       
+        List <Integer> listaAdj = new ArrayList<>();
+    
         
+     
+    }    
+    
+    int getAdjacentees(int vertice){
         
+        return 0;
     }
-    
-    
     
 }

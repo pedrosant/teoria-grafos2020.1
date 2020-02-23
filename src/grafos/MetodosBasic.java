@@ -6,26 +6,38 @@
 package grafos;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Roberto Borges
  */
+
+
+
+
+
 public class MetodosBasic {
-    ArrayList <String> listaAdj = new ArrayList<>();
+    int matrizAdj[][];
     
-     public ArrayList<String> getAdjacencia(int matriz[][]){
-         for (int i = 0; i < matriz.length; i++) {
-             for (int j = 0; j < matriz.length; j++) {
-               if (matriz[i][j] == 1) {
-                   int cont = 0;
-                   System.out.print("Na posição" + i + j + "são adjacentes");
-                    listaAdj.add(cont, "1");
-                    cont += 1;
-                }  
+    public MetodosBasic(int matriz[][]) {
+        getAdjacencia(matrizAdj);
+    }
+    
+    
+    List <Integer> listaAdj = new ArrayList<>();
+    
+    
+     List <Integer> getAdjacencia(int matrizAdj[][]){
+         for (int i = 0; i < 10; i++) {
+             for (int j = 0; j < 10; j++) {
+                 if (matrizAdj[i][j] == 1) {
+                     listaAdj.add(i);
+                     listaAdj.add(j);
+                 }
              }
-         }        
-        return listaAdj;
+         }
+         return listaAdj;
     }
      
      
