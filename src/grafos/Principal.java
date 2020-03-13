@@ -5,7 +5,7 @@ import java.util.Scanner;
  *
  * @author Roberto Borges
  */
-    public class Principal {
+public class Principal {
    
 public static void criarMatriz(int matriz[][]){
     for (int i = 0; i < matriz.length; i++) {
@@ -41,21 +41,18 @@ public static void adicionarVertices(int matrizAdj[][]){
 }
 
 public static void getAdjacencia(int matrizAdj[][], int verticeProcurado){
-   for (int i = verticeProcurado; i < matrizAdj.length; i++) {
-    for (int j = 0; j < matrizAdj.length; j++) {
-      if (matrizAdj[verticeProcurado][j] == 1) {
-          if (verticeProcurado == j) {
-             j++;
-          }else{
-             System.out.println("A linha: " + verticeProcurado + " coluna: " + j + " é ajavente vertice v" + verticeProcurado); 
-          }
-       
-        }
-         break;
-      }
-    }
-  }
-  
+   for (int i = 0; i < matrizAdj.length; i++) {    
+      if (matrizAdj[i][verticeProcurado] == 1) {
+          System.out.println("A linha: " + i + " coluna: " + verticeProcurado + " é ajavente vertice v" + verticeProcurado);
+      }      
+   }
+   for (int i = 0; i < matrizAdj.length; i++) {    
+      if (matrizAdj[verticeProcurado][i] == 1) {
+          System.out.println("A linha: " + verticeProcurado + " coluna: " + i + " é ajavente vertice v" + verticeProcurado);
+      }      
+   }
+}
+
 public static boolean ehRegular(int matriz[][], int tamanhoMatriz){
     boolean resultado = false;
     int contador = 0;
