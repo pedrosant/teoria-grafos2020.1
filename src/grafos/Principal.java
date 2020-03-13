@@ -78,8 +78,36 @@ public static boolean ehRegular(int matriz[][], int tamanhoMatriz){
  return resultado;   
 }
 
-public static void ehCompleto(){
+public static boolean ehCompleto(int matriz[][]){
+    boolean resultado = false;
+    for (int i = 0; i < matriz.length; i++) {
+        for (int j = (i + 1); j < matriz.length; j++) {
+            if (matriz[i][i] == 0) {
+                  if (matriz[i][j] == 1) {
+                      resultado = true;
+                  }else{
+                      resultado = false;
+                  }                                 
+            }else{
+            resultado = false;
+        }
+       }
+    } 
     
+    for (int i = matriz.length-1; i > 1; i--) {
+        for (int j = i -1; j > 1; j--) {
+            if (matriz[i][i] == 0) {
+                  if (matriz[i][j] == 1) {
+                      resultado = true;
+                  }else{
+                      resultado = false;
+                  }                                  
+            }else{
+              resultado = false;
+        }
+        }
+    } 
+    return resultado;
 }
 
 
@@ -113,7 +141,13 @@ int matrizAdj[][] = new int [n][n];
         resultado = ehRegular(matrizAdj, n);
         System.out.println(resultado);
     }
-    
+   
+    System.out.println("Verificar se é ehCompleto ? (s/n)");
+    escolha = scan.next();
+    if (escolha.equals("s")){
+        resultado = ehCompleto(matrizAdj);
+        System.out.println(resultado);
+    }
   }    
     
    
