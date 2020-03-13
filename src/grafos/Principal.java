@@ -55,27 +55,27 @@ public static void getAdjacencia(int matrizAdj[][], int verticeProcurado){
 
 public static boolean ehRegular(int matriz[][], int tamanhoMatriz){
     boolean resultado = false;
-    int contador = 0;
-    int v[] = new int [tamanhoMatriz];
-    for (int i = 0; i < matriz.length; i++) {
-        for (int j = 0; j < matriz.length; j++) {
-            if (matriz[j][i] == 1) {
-               contador++;
-               v[i] = contador;
-            }          
-        }
-        
-    }
-    for (int i = 0; i < v.length; i++) {
-        if (v[0] == v[i+1]) {
-             resultado = true;   
-        }else{
-             resultado = false;
-             continue;
-        }
-           
-    }
-    return resultado;
+   int v[] = new int [tamanhoMatriz];   
+     
+   for (int i = 0; i < matriz.length; i++) {    
+       for (int j = 0; j < matriz.length; j++) {
+           if (matriz[i][j] == 1) {
+              v[i] += 1;        
+           }
+       }
+      
+   }
+       int verificado = v[0];
+       for (int i = 1; i < v.length; i++) {
+           if (verificado == v[i]) {
+              resultado = true;
+           }else{
+              resultado = false;
+              break;
+           }
+       }
+          
+ return resultado;   
 }
 
 public static void ehCompleto(){
@@ -105,6 +105,15 @@ int matrizAdj[][] = new int [n][n];
         int vertice = scan.nextInt();
         getAdjacencia(matrizAdj, vertice);
     }
+    
+    System.out.println("Verificar se é k-Regular ? (s/n)");
+    boolean resultado;
+    escolha = scan.next();
+    if (escolha.equals("s")) {
+        resultado = ehRegular(matrizAdj, n);
+        System.out.println(resultado);
+    }
+    
   }    
     
    
