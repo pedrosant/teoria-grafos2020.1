@@ -137,4 +137,59 @@ public boolean ehCompleto(int matriz[][], int tamanhoMatriz){
    return result;
 }
 
+public boolean ehConexo (int matriz[][], int tamanhoMatriz){
+    boolean result = false;
+    boolean resultFinal = false;
+    int v[] = new int[tamanhoMatriz];
+    boolean v2[] = new boolean[tamanhoMatriz];
+        for (int i = 0; i < tamanhoMatriz; i++) {
+            
+            //Zerar vetor v;
+            for (int j = 0; j < tamanhoMatriz; j++) {
+                v[j] = 0;
+            }
+            
+            // verifica se a componetes conxo e atribui vlor 1 para o vertor v
+            for (int j = 0; j < tamanhoMatriz; j++) {
+                if (i == j) {
+                    v[j] = 0;
+                    continue;
+                }else if(matriz[i][j] == 0) {
+                    v[j] = 0;
+                }else{
+                    v[j] = 1;
+                }
+            }
+            
+            // verifica o vetor v e todo 0, se for, atribue falso ao vetor v2
+            for (int j = 0; j < tamanhoMatriz; j++) {
+                if (j != i) {
+                    if (v[j] == 1) {
+                        result = true;
+                        v2[i] = result;
+                        break;
+                    }else{
+                        result = false;
+                        v2[i] = result;
+                }
+            }           
+        }   
+     }
+        // verifica se há false no vertor v2 se houver o método retorna false
+        for (int i = 0; i < tamanhoMatriz; i++) {
+            if (v2[i] == false) {
+                resultFinal = false;
+                break;
+            }else{
+                resultFinal = true;
+            }
+    }
+return resultFinal;
+}
+
+
+
+
+
+
 }

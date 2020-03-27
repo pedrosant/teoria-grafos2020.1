@@ -50,6 +50,15 @@ int matrizAdj[][] = new int [n][n];
         resultado = met.ehCompleto(matrizAdj ,n);
         System.out.println(resultado);
     }
+    
+    
+    System.out.println("Verificar se é ehConexo ? (s/n)");
+    escolha = scan.next();
+    if (escolha.equals("s")){
+        resultado = met.ehConexo(matrizAdj ,n);
+        System.out.println(resultado);
+    }
+    
   }    
     
    
