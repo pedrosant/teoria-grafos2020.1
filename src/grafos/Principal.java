@@ -78,36 +78,58 @@ public static boolean ehRegular(int matriz[][], int tamanhoMatriz){
  return resultado;   
 }
 
-public static boolean ehCompleto(int matriz[][]){
-    boolean resultado = false;
-    for (int i = 0; i < matriz.length; i++) {
-        for (int j = (i + 1); j < matriz.length; j++) {
-            if (matriz[i][i] == 0) {
-                  if (matriz[i][j] == 1) {
-                      resultado = true;
-                  }else{
-                      resultado = false;
-                  }                                 
-            }else{
-            resultado = false;
-        }
-       }
-    } 
-    
-    for (int i = matriz.length-1; i > 1; i--) {
-        for (int j = i -1; j > 1; j--) {
-            if (matriz[i][i] == 0) {
-                  if (matriz[i][j] == 1) {
-                      resultado = true;
-                  }else{
-                      resultado = false;
-                  }                                  
-            }else{
-              resultado = false;
-        }
-        }
-    } 
-    return resultado;
+public static boolean ehCompleto(int matriz[][], int tamanhoMatriz){
+   boolean result = false;
+   boolean result1 = false;
+   boolean result2 = false;   
+   int aux = 1;
+   
+   /*Esse primeiro for verifica a região superior direita da matriz*/
+        for (int i = 0; i < tamanhoMatriz; i++) {            
+            for (int j = aux; j < tamanhoMatriz; j++) {
+                if (matriz[i][j] == 1) {
+                    result1 = true;
+                }else{
+                    result1 = false;
+                    break;
+                }                
+            }
+            if (result1 == false) {
+                break;
+            }
+            aux ++;
+    }
+     
+   /*Esse primeiro for verifica a região inferior esquerda da matriz*/
+        int j = 1;
+        for (int i = 1; i < tamanhoMatriz; i++) {
+            int aux2 = 0;
+            while(aux2 < j){
+                if (matriz[i][aux2] == 1) {
+                    result2 = true;
+                }else{
+                    result2 = false;
+                    break;
+                }
+                if (aux2 < j) {
+                    aux2++;
+                }
+                
+            }
+            
+            if (j < tamanhoMatriz) {
+                j++;
+            }
+            if (result2 == false) {
+                break;
+            }        
+    }
+        
+        if ((result1 && result2) == true) {
+            result = true;
+    }
+   
+   return result;
 }
 
 
@@ -145,7 +167,7 @@ int matrizAdj[][] = new int [n][n];
     System.out.println("Verificar se é ehCompleto ? (s/n)");
     escolha = scan.next();
     if (escolha.equals("s")){
-        resultado = ehCompleto(matrizAdj);
+        resultado = ehCompleto(matrizAdj ,n);
         System.out.println(resultado);
     }
   }    
