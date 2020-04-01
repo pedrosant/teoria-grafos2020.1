@@ -189,7 +189,9 @@ return resultFinal;
 
 public int dijkstra1(int matriz [][], int taamanhoMattriz){
     int m[][] = new int [4][taamanhoMattriz];
-    
+    for (int i = 0; i < 10; i++) {
+        
+    }
     return 0;
 }
 
