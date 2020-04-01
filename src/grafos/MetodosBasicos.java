@@ -187,7 +187,15 @@ public boolean ehConexo (int matriz[][], int tamanhoMatriz){
 return resultFinal;
 }
 
+public int dijkstra1(int matriz [][], int taamanhoMattriz){
+    int m[][] = new int [4][taamanhoMattriz];
+    
+    return 0;
+}
 
+public int dijkstra2(){
+    return 0;
+}
 
 
 
