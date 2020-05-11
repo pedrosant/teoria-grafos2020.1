@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author Roberto Borges
  */
 public class MetodosBasicos {
+    
 public void criarMatriz(int matriz[][]){
     for (int i = 0; i < matriz.length; i++) {
         for (int j = 0; j < matriz.length; j++) {
@@ -186,20 +187,5 @@ public boolean ehConexo (int matriz[][], int tamanhoMatriz){
     }
 return resultFinal;
 }
-
-public int dijkstra1(int matriz [][], int taamanhoMattriz){
-    int m[][] = new int [4][taamanhoMattriz];
-    for (int i = 0; i < 10; i++) {
-        
-    }
-    return 0;
-}
-
-public int dijkstra2(){
-    return 0;
-}
-
-
-
 
 }
